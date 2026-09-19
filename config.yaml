@@ -1,0 +1,18 @@
+# MVP config — free sources only, local run.
+tickers: [AAPL, MSFT, TSLA, NVDA, BTC-USD]
+sources: [rss, yfinance, sec]
+poll_interval_min: 30
+db_path: data/sentiment.db
+cache_dir: data/cache
+model_name: ProsusAI/finbert
+score_batch_size: 32
+max_text_chars: 2000
+fetch_bodies: false
+throttle_sec: 1.0
+user_agent: "tradingbot-mvp/0.1 (+local research)"
+rss_feeds:
+  - https://news.google.com/rss/search?q={ticker}%20stock&hl=en-US&gl=US&ceid=US:en
+  - https://feeds.finance.yahoo.com/rss/2.0/headline?s={ticker}&region=US&lang=en-US
+market_feeds:
+  - https://feeds.marketwatch.com/marketwatch/topstories/
+  - https://www.cnbc.com/id/100003114/device/rss/rss.html

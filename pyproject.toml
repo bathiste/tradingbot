@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tradingbot-sentiment-mvp"
+version = "0.1.0"
+description = "Local free-only ticker sentiment pipeline (MVP)"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["sentiment_bot*"]
+
+[project.scripts]
+sentiment-bot = "sentiment_bot.cli:main"
+sentiment-scheduler = "sentiment_bot.scheduler:main"
